@@ -448,6 +448,66 @@ section{
     .hero-section{flex-direction:column}
     .profile-wrapper{margin-top:40px;width:220px;height:220px}
 }
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #0f2027;
+  color: white;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* 3-line icon */
+.menu-toggle {
+  display: none;
+  width: 30px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: white;
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #1c1c1c;
+    width: 200px;
+    padding: 15px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
 </style>
 </head>
 
@@ -455,14 +515,23 @@ section{
 
 <header>
 <nav class="navbar">
-<h2 class="logo">Taranjeet Singh</h2>
-<ul class="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <h2 class="logo">Taranjeet Singh</h2>
+
+  <!-- 3 line icon -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Menu -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 </header>
 
@@ -562,9 +631,9 @@ section{
 </section>
 
 <section id="contact" class="contact-section glass reveal">
-  <h2>Get In Touch</h2>
+  <h2>Start a Conversation</h2>
   <p class="contact-sub">
-    Have a project or want to work together? Let’s connect.
+    Whether you have a project, collaboration idea, or just want to say hello — feel free to reach out.
   </p>
 
   <div class="contact-wrapper">
@@ -607,6 +676,17 @@ section{
 </footer>
 
 <script>
+
+  const form = document.querySelector(".contact-form");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // Page reload rokta hai
+    
+    alert("✅ Thank you! Your message has been sent successfully.");
+    
+    form.reset(); // Form clear kar deta hai
+  });
+    
 window.onload=()=>document.body.style.opacity=1;
 
 /* Typing */
@@ -647,6 +727,13 @@ document.querySelectorAll(".btn").forEach(btn=>{
   setTimeout(()=>s.remove(),600);
  };
 });
+
+
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+
 </script>
 
 </body>
