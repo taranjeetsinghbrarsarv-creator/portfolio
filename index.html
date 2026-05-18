@@ -4,31 +4,26 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taranjeet Singh | Portfolio</title>
-
 <link rel="stylesheet" href="desgin.css">
-
-<style>
-</style>
 </head>
-
 <body>
 
 <header>
 <nav class="navbar">
   <h2 class="logo">Taranjeet Singh</h2>
 
-  <!-- 3 line icon -->
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <!-- Menu -->
   <ul class="nav-links" id="navLinks">
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#principles">Principles</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -37,203 +32,288 @@
 
 <section id="home" class="hero-section">
 <div class="hero-content">
-<h1>Hi, I'm <span>Taranjeet Singh</span></h1>
-<h3 id="typing"></h3>
-<p>I design and develop modern, responsive websites.</p>
-<a href="#projects" class="btn">View Projects</a>
-<a href="#contact" class="btn btn-outline">Contact</a>
+  <h1>Hi, I'm <span>Taranjeet Singh</span></h1>
+  <h3 id="typing"></h3>
+  <p>I design and develop modern, responsive websites with interactive user experiences.</p>
+  <div class="hero-buttons">
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#contact" class="btn btn-outline">Contact Me</a>
+    <a href="#" class="btn btn-resume" download>Download CV <span>📄</span></a>
+  </div>
 </div>
 
 <div class="profile-wrapper">
-<img src="singh.jpg">
+  <img src="singh.jpg" alt="Taranjeet Singh">
 </div>
 </section>
 
 <section id="about" class="about-section glass reveal">
-<h2>About Me</h2>
-<p>Passionate Web Developer from India focused on clean UI, animations and performance.</p>
+  <h2>About Me</h2>
+  <p>Passionate Web Developer from India focused on clean UI, smooth animations, and high performance. I love converting complex problems into simple, beautiful, and intuitive designs.</p>
+</section>
+
+<section id="services" class="reveal">
+  <h2>What I Offer</h2>
+  <p style="color:#ccc; margin-top:8px">High-quality development services tailored to your needs</p>
+  <div class="services-container">
+    <div class="service-card glass">
+      <div class="service-icon">🌐</div>
+      <h3>Web Development</h3>
+      <p>Building clean, fast, and scalable frontend applications using modern web standards.</p>
+    </div>
+    <div class="service-card glass">
+      <div class="service-icon">📱</div>
+      <h3>Responsive Design</h3>
+      <p>Ensuring your website looks beautiful and functions perfectly on desktops, tablets, and mobile devices.</p>
+    </div>
+    <div class="service-card glass">
+      <div class="service-icon">✨</div>
+      <h3>UI/UX & Animations</h3>
+      <p>Creating interactive micro-interactions, custom animations, and clean layouts for optimal user engagement.</p>
+    </div>
+  </div>
 </section>
 
 <section id="skills" class="reveal">
   <h2>Professional Skills</h2>
-  <p style="color:#ccc;margin-top:8px">
-    Technologies I use to build real-world applications
-  </p>
+  <p style="color:#ccc; margin-top:8px">Technologies I use to build real-world applications</p>
 
   <div class="skills-container">
-
     <div class="skill-pro">
-      <div class="skill-header">
-        <span>HTML</span>
-        <span>95%</span>
-      </div>
-      <div class="skill-track">
-        <div class="skill-fill" style="width:95%"></div>
+      <div class="skill-header"><span>HTML</span><span>95%</span></div>
+      <div class="skill-track"><div class="skill-fill" style="width:95%"></div></div>
+    </div>
+    <div class="skill-pro">
+      <div class="skill-header"><span>CSS</span><span>90%</span></div>
+      <div class="skill-track"><div class="skill-fill" style="width:90%"></div></div>
+    </div>
+    <div class="skill-pro">
+      <div class="skill-header"><span>JavaScript</span><span>85%</span></div>
+      <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+    </div>
+  </div>
+  
+
+  <div class="github-mockup glass">
+    <h3>Coding Consistency</h3>
+    <div class="graph-scroll">
+      <div class="github-graph">
+        <div class="graph-block level-3"></div><div class="graph-block level-1"></div><div class="graph-block level-0"></div><div class="graph-block level-4"></div><div class="graph-block level-2"></div><div class="graph-block level-1"></div><div class="graph-block level-3"></div><div class="graph-block level-0"></div><div class="graph-block level-4"></div><div class="graph-block level-2"></div><div class="graph-block level-3"></div><div class="graph-block level-4"></div><div class="graph-block level-1"></div><div class="graph-block level-2"></div><div class="graph-block level-0"></div><div class="graph-block level-3"></div><div class="graph-block level-4"></div><div class="graph-block level-2"></div>
       </div>
     </div>
-
-    <div class="skill-pro">
-      <div class="skill-header">
-        <span>CSS</span>
-        <span>90%</span>
-      </div>
-      <div class="skill-track">
-        <div class="skill-fill" style="width:90%"></div>
-      </div>
-    </div>
-
-    <div class="skill-pro">
-      <div class="skill-header">
-        <span>JavaScript</span>
-        <span>85%</span>
-      </div>
-      <div class="skill-track">
-        <div class="skill-fill" style="width:85%"></div>
-      </div>
-    </div>
-
+    <p style="font-size: 12px; color: #aaa; margin-top: 10px;">Daily practice and logic building</p>
   </div>
 </section>
 
+<section id="principles" class="reveal">
+  <h2>My Coding Principles</h2>
+  <p style="color:#ccc; margin-top:8px">The rules I follow to deliver high-quality code</p>
+  <div class="principles-container">
+    <div class="principle-card glass">
+      <div class="num">01</div>
+      <h3>Clean & Structured Code</h3>
+      <p>Writing semantic HTML and organized CSS that is easy to maintain and scale over time.</p>
+    </div>
+    <div class="principle-card glass">
+      <div class="num">02</div>
+      <h3>Performance First</h3>
+      <p>Optimizing image sizes, clean JavaScript code execution, and fast website loading speeds.</p>
+    </div>
+    <div class="principle-card glass">
+      <div class="num">03</div>
+      <h3>User-Centric Layouts</h3>
+      <p>Ensuring smooth navigations and high contrast for clear visibility and neat aesthetics.</p>
+    </div>
+  </div>
+</section>
 
 <section id="projects" class="reveal">
-  <h2>Projects</h2>
-
+  <h2>Featured Projects</h2>
   <div class="projects-container">
-
     <div class="project-card project-img">
       <img src="project img.jpg" alt="Online Parking System">
       <div class="project-overlay">
-
-        <h3><a href="https://taranjeetsinghbrarsarv-creator.github.io/taranjeet-singh/"> Online Parking System</a></h3> 
-  
+        <h3><a href="https://taranjeetsinghbrarsarv-creator.github.io/taranjeet-singh/" target="_blank">Online Parking System</a></h3> 
         <p>Smart parking slot booking with real-time availability.</p>
       </div>
     </div>
-
     <div class="project-card project-img">
       <img src="moblie.jpg" alt="Shop Website">
       <div class="project-overlay">
-        <h3><a href="https://taranjeetsinghbrarsarv-creator.github.io/moblie/">Moblie Shop</a></h3>
+        <h3><a href="https://taranjeetsinghbrarsarv-creator.github.io/moblie/" target="_blank">Mobile Shop</a></h3>
         <p>Responsive e-commerce UI with modern design.</p>
       </div>
     </div>
-
     <div class="project-card project-img">
       <img src="port.jpg" alt="Portfolio Website">
       <div class="project-overlay">
-        <h3><a href="taran.html">Portfolio website</a></h3>
+        <h3><a href="taran.html">Portfolio Website</a></h3>
         <p>Personal portfolio with animations & glassmorphism.</p>
       </div>
     </div>
-
+    <div class="project-card project-img">
+      <img src="https://www.shutterstock.com/image-vector/new-beauty-parlour-logo-design-260nw-2313965113.jpg" alt="Admin Dashboard">
+      <div class="project-overlay">
+        <h3><a href="https://taranjeetsinghbrarsarv-creator.github.io/Parlour/" target="_blank">Parlour Website</a></h3>
+        <p>Modern dashboard with analytics and booking management.</p>
+      </div>
+    </div>
+    <div class="project-card project-img">
+      <img src="hiit.jpg" alt="HIIT Ambala">
+      <div class="project-overlay">
+        <h3><a href="https://taranjeetsinghbrarsarv-creator.github.io/hiitambala/" target="_blank">HIIT Ambala</a></h3>
+        <p>Institute website with course details and contact system.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="contact-section glass reveal">
-  <h2>Start a Conversation</h2>
-  <p class="contact-sub">
-    Whether you have a project, collaboration idea, or just want to say hello — feel free to reach out.
-  </p>
+<section id="contact" class="contact-section reveal">
+  <div class="contact-bg-glow"></div>
+  
+  <h2>Let's Create Something Great</h2>
+  <p class="contact-sub">Got an idea, a project, or just want to connect? Drop a message and let's talk tech.</p>
 
-  <div class="contact-wrapper">
-    <form class="contact-form">
-      <div class="input-group">
-        <input type="text" required>
-        <label>Full Name</label>
+  <div class="contact-wrapper glass">
+    <div class="form-container">
+      <form class="contact-form" id="contactForm">
+        <div class="input-group">
+          <input type="text" id="userName" required autocomplete="off">
+          <label>Full Name</label>
+          <span class="input-line"></span>
+        </div>
+        <div class="input-group">
+          <input type="email" id="userEmail" required autocomplete="off">
+          <label>Email Address</label>
+          <span class="input-line"></span>
+        </div>
+        <div class="input-group">
+          <textarea id="userMessage" required></textarea>
+          <label>Your Message</label>
+          <span class="input-line"></span>
+        </div>
+        
+        <button type="submit" class="btn-submit-glow" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="btn-icon">⚡</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="contact-info-card">
+      <div class="info-overlay"></div>
+      <h3>Contact Information</h3>
+      <p class="info-desc">Feel free to reach out via email or check out my active handles below.</p>
+      
+      <div class="info-details">
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>Ambala City, Haryana, India</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">📧</span>
+          <div>
+            <h4>Email</h4>
+            <p>taranjeetsinghbrarsarv@gmail.com</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">💼</span>
+          <div>
+            <h4>Role</h4>
+            <p>Frontend Web Developer</p>
+          </div>
+        </div>
       </div>
 
-      <div class="input-group">
-        <input type="email" required>
-        <label>Email Address</label>
-      </div>
-
-      <div class="input-group">
-        <textarea required></textarea>
-        <label>Your Message</label>
-      </div>
-
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-
-    <div class="contact-info">
-      <h3>Contact Info</h3>
-      <p>📍 India</p>
-      <p>📧 taranjeetsinghbrarsarv@gmail.com</p>
-      <p>💼 Web Developer</p>
-
-      <div class="social-links">
-        <a href="#">GitHub</a>
-        <a href="https://www.instagram.com/devil___brar__saab?igsh=YTM3YWZpOGJneGJo">Instagram</a>
+      <div class="social-links-container">
+        <a href="#" class="social-icon-btn github">GitHub</a>
+        <a href="https://www.instagram.com/devil___brar__saab?igsh=YTM3YWZpOGJneGJo" target="_blank" class="social-icon-btn instagram">Instagram</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-<p>© 2026 Taranjeet Singh | All Rights Reserved</p>
+  <p>© 2026 Taranjeet Singh | All Rights Reserved</p>
 </footer>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
 <script>
+  // EmailJS Initialization
+  // YAHAN APNI PUBLIC KEY DALO EMAILJS DASHBOARD SE:
+  (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); 
+  })();
 
-  const form = document.querySelector(".contact-form");
+  const contactForm = document.getElementById("contactForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const btnText = submitBtn.querySelector(".btn-text");
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault(); // Page reload rokta hai
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
     
-    alert("✅ Thank you! Your message has been sent successfully.");
+    // Agar apne keys change nahi ki hain toh yeh alert aayega baki error nahi dega:
+    if(emailjs.init === "YOUR_PUBLIC_KEY") {
+       alert("⚠️ Taranjeet, please setup your actual EmailJS keys to receive direct emails!");
+       return;
+    }
     
-    form.reset(); // Form clear kar deta hai
+    btnText.innerText = "Sending...";
+    submitBtn.style.opacity = "0.7";
+    submitBtn.disabled = true;
+
+    const templateParams = {
+      from_name: document.getElementById("userName").value,
+      from_email: document.getElementById("userEmail").value,
+      message: document.getElementById("userMessage").value
+    };
+
+    // EmailJS Delivery Process
+    // YAHAN APNI SERVICE ID AUR TEMPLATE ID DALO:
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+      .then(function(response) {
+         alert("✅ Success! Your message has been sent to Taranjeet.");
+         contactForm.reset();
+         btnText.innerText = "Send Message";
+         submitBtn.style.opacity = "1";
+         submitBtn.disabled = false;
+      }, function(error) {
+         alert("❌ Form JavaScript config is ok, but EmailJS rejected the dummy IDs. Create your free account to get real keys!");
+         btnText.innerText = "Send Message";
+         submitBtn.style.opacity = "1";
+         submitBtn.disabled = false;
+         console.log('FAILED...', error);
+      });
   });
     
-window.onload=()=>document.body.style.opacity=1;
+  window.onload=()=>document.body.style.opacity=1;
 
-/* Typing */
-const text="Web Developer";
-let i=0;
-const t=document.getElementById("typing");
-(function type(){
- if(i<text.length){t.innerHTML+=text.charAt(i++);setTimeout(type,120);}
-})();
+  /* Typing Effect */
+  const text="Web Developer & Designer";
+  let i=0;
+  const t=document.getElementById("typing");
+  (function type(){
+   if(i<text.length){t.innerHTML+=text.charAt(i++);setTimeout(type,120);}
+  })();
 
-/* Reveal */
-const reveals=document.querySelectorAll(".reveal");
-window.addEventListener("scroll",()=>{
- reveals.forEach(el=>{
-  if(el.getBoundingClientRect().top<window.innerHeight-100){
-   el.classList.add("show");
+  /* Reveal Animation on Scroll */
+  const reveals=document.querySelectorAll(".reveal");
+  window.addEventListener("scroll",()=>{
+   reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-100){
+     el.classList.add("show");
+    }
+   });
+  });
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
   }
- });
-});
-
-/* Skills */
-const bars=document.querySelectorAll(".skill-progress");
-window.addEventListener("scroll",()=>{
- bars.forEach(b=>{
-  if(b.getBoundingClientRect().top<window.innerHeight){
-   b.style.width=b.getAttribute("data");
-  }
- });
-});
-
-/* Ripple */
-document.querySelectorAll(".btn").forEach(btn=>{
- btn.onclick=e=>{
-  const s=document.createElement("span");
-  s.style.left=e.offsetX+"px";
-  s.style.top=e.offsetY+"px";
-  btn.appendChild(s);
-  setTimeout(()=>s.remove(),600);
- };
-});
-
-
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
-
-
 </script>
-
 </body>
 </html>
