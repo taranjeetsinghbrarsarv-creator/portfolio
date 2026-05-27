@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taranjeet Singh | Portfolio</title>
 <link rel="stylesheet" href="desgin.css">
+<style>
+  /* सुरक्षा के लिए: अगर CSS लोड न हो, तो भी ब्लैक स्क्रीन नहीं दिखेगी */
+  body {
+    background-color: #0f172a !important; 
+    color: #ffffff !important;
+    opacity: 1 !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  /* एनिमेसन की वजह से कंटेंट गायब न हो */
+  .reveal {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: all 0.6s ease;
+  }
+</style>
 </head>
 <body>
 
@@ -33,12 +49,12 @@
 <section id="home" class="hero-section">
 <div class="hero-content">
   <h1>Hi, I'm <span>Taranjeet Singh</span></h1>
-  <h3 id="typing"></h3>
+  <h3 id="typing" style="min-height: 30px; color: #38bdf8;"></h3>
   <p>I design and develop modern, responsive websites with interactive user experiences.</p>
   <div class="hero-buttons">
     <a href="#projects" class="btn">View Projects</a>
     <a href="#contact" class="btn btn-outline">Contact Me</a>
-    <a href="#" class="btn btn-resume" download>Download CV <span>📄</span></a>
+    <a href="REsume.pdf" class="btn btn-resume" download>Download CV <span>📄</span></a>
   </div>
 </div>
 
@@ -178,17 +194,17 @@
     <div class="form-container">
       <form class="contact-form" id="contactForm">
         <div class="input-group">
-          <input type="text" id="userName" required autocomplete="off">
+          <input type="text" id="userName" name="name" required autocomplete="off">
           <label>Full Name</label>
           <span class="input-line"></span>
         </div>
         <div class="input-group">
-          <input type="email" id="userEmail" required autocomplete="off">
+          <input type="email" id="userEmail" name="email" required autocomplete="off">
           <label>Email Address</label>
           <span class="input-line"></span>
         </div>
         <div class="input-group">
-          <textarea id="userMessage" required></textarea>
+          <textarea id="userMessage" name="message" required></textarea>
           <label>Your Message</label>
           <span class="input-line"></span>
         </div>
@@ -244,76 +260,69 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
-  // EmailJS Initialization
-  // YAHAN APNI PUBLIC KEY DALO EMAILJS DASHBOARD SE:
-  (function() {
-      emailjs.init("YOUR_PUBLIC_KEY"); 
-  })();
+/* =========================================
+   1. EMAILJS CREDENTIALS (यहाँ अपनी खुद की IDs डालें)
+========================================= */
+const PUBLIC_KEY  = "-2B3WlGcLYjJB5MO7";  // अपनी EmailJS Public Key यहाँ बदलें
+const SERVICE_ID  = "service_ejcwfu7";   // अपनी EmailJS Service ID यहाँ बदलें
+const TEMPLATE_ID = "template_hraa37e";  // अपनी EmailJS Template ID यहाँ बदलें
 
-  const contactForm = document.getElementById("contactForm");
-  const submitBtn = document.getElementById("submitBtn");
-  const btnText = submitBtn.querySelector(".btn-text");
+emailjs.init(PUBLIC_KEY);
 
-  contactForm.addEventListener("submit", function(e) {
+/* =========================================
+   2. FORM SUBMISSION LOGIC (पूरी तरह सही किया हुआ)
+========================================= */
+const contactForm = document.getElementById("contactForm");
+const submitBtn   = document.getElementById("submitBtn");
+const btnText     = submitBtn.querySelector(".btn-text");
+
+contactForm.addEventListener("submit", function(e) {
     e.preventDefault();
-    
-    // Agar apne keys change nahi ki hain toh yeh alert aayega baki error nahi dega:
-    if(emailjs.init === "YOUR_PUBLIC_KEY") {
-       alert("⚠️ Taranjeet, please setup your actual EmailJS keys to receive direct emails!");
-       return;
-    }
-    
+
     btnText.innerText = "Sending...";
-    submitBtn.style.opacity = "0.7";
     submitBtn.disabled = true;
 
     const templateParams = {
-      from_name: document.getElementById("userName").value,
-      from_email: document.getElementById("userEmail").value,
-      message: document.getElementById("userMessage").value
+        name: document.getElementById("userName").value,
+        email: document.getElementById("userEmail").value,
+        message: document.getElementById("userMessage").value,
+        from_name: document.getElementById("userName").value
     };
 
-    // EmailJS Delivery Process
-    // YAHAN APNI SERVICE ID AUR TEMPLATE ID DALO:
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-      .then(function(response) {
-         alert("✅ Success! Your message has been sent to Taranjeet.");
-         contactForm.reset();
-         btnText.innerText = "Send Message";
-         submitBtn.style.opacity = "1";
-         submitBtn.disabled = false;
-      }, function(error) {
-         alert("❌ Form JavaScript config is ok, but EmailJS rejected the dummy IDs. Create your free account to get real keys!");
-         btnText.innerText = "Send Message";
-         submitBtn.style.opacity = "1";
-         submitBtn.disabled = false;
-         console.log('FAILED...', error);
-      });
-  });
-    
-  window.onload=()=>document.body.style.opacity=1;
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+    .then(function() {
+        alert("✅ Success! Your message has been sent to Taranjeet.");
+        contactForm.reset();
+        btnText.innerText = "Send Message";
+        submitBtn.disabled = false;
+    })
+    .catch(function(error) {
+        alert("❌ Failed to send message. Please try again.");
+        console.log("EmailJS Error:", error);
+        btnText.innerText = "Send Message";
+        submitBtn.disabled = false;
+    });
+});
 
-  /* Typing Effect */
-  const text="Web Developer & Designer";
-  let i=0;
-  const t=document.getElementById("typing");
-  (function type(){
-   if(i<text.length){t.innerHTML+=text.charAt(i++);setTimeout(type,120);}
-  })();
+/* =========================================
+   3. INTERACTIVE UI LOGIC (TYPING & MENU)
+========================================= */
+const text = "Web Developer & Designer";
+let i = 0;
+const t = document.getElementById("typing");
 
-  /* Reveal Animation on Scroll */
-  const reveals=document.querySelectorAll(".reveal");
-  window.addEventListener("scroll",()=>{
-   reveals.forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100){
-     el.classList.add("show");
-    }
-   });
-  });
+function type(){
+   if(i < text.length){
+      t.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 120);
+   }
+}
+document.addEventListener("DOMContentLoaded", type);
 
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
+function toggleMenu() {
+   document.getElementById("navLinks").classList.toggle("active");
+}
 </script>
 </body>
 </html>
